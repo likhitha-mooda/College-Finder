@@ -36,11 +36,15 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "CollegeFinder — Discover and compare colleges" },
       { name: "description", content: "Search, compare, and save colleges. Real data, fast filters, side-by-side comparison." },
-      { property: "og:title", content: "CollegeFinder" },
-      { property: "og:description", content: "Discover and compare colleges side by side." },
+      { property: "og:title", content: "CollegeFinder — Discover and compare colleges" },
+      { property: "og:description", content: "Search, compare, and save colleges. Real data, fast filters, side-by-side comparison." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "CollegeFinder — Discover and compare colleges" },
+      { name: "twitter:description", content: "Search, compare, and save colleges. Real data, fast filters, side-by-side comparison." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/86515356-6665-4de4-9ad1-590675b8961b" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/86515356-6665-4de4-9ad1-590675b8961b" },
     ],
     links: [
       {
