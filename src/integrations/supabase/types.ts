@@ -14,13 +14,78 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      colleges: {
+        Row: {
+          courses: string[]
+          created_at: string
+          fees: number
+          id: string
+          location: string
+          name: string
+          overview: string
+          placements: Json
+          rating: number
+        }
+        Insert: {
+          courses?: string[]
+          created_at?: string
+          fees: number
+          id?: string
+          location: string
+          name: string
+          overview?: string
+          placements?: Json
+          rating: number
+        }
+        Update: {
+          courses?: string[]
+          created_at?: string
+          fees?: number
+          id?: string
+          location?: string
+          name?: string
+          overview?: string
+          placements?: Json
+          rating?: number
+        }
+        Relationships: []
+      }
+      saved_colleges: {
+        Row: {
+          college_id: string
+          created_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          college_id: string
+          created_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          college_id?: string
+          created_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "saved_colleges_college_id_fkey"
+            columns: ["college_id"]
+            isOneToOne: false
+            referencedRelation: "colleges"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      show_limit: { Args: never; Returns: number }
+      show_trgm: { Args: { "": string }; Returns: string[] }
     }
     Enums: {
       [_ in never]: never
