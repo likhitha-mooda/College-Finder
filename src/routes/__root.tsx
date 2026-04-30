@@ -1,4 +1,9 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { AuthProvider } from "@/lib/auth";
+import { CompareProvider } from "@/lib/compare";
+import { Header } from "@/components/Header";
+import { CompareBar } from "@/components/CompareBar";
+import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
@@ -29,11 +34,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "CollegeFinder — Discover and compare colleges" },
+      { name: "description", content: "Search, compare, and save colleges. Real data, fast filters, side-by-side comparison." },
+      { property: "og:title", content: "CollegeFinder" },
+      { property: "og:description", content: "Discover and compare colleges side by side." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -65,5 +69,18 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <AuthProvider>
+      <CompareProvider>
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <CompareBar />
+        </div>
+        <Toaster richColors closeButton />
+      </CompareProvider>
+    </AuthProvider>
+  );
 }
