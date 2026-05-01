@@ -21,8 +21,8 @@ A full-stack web application to search, compare, and save colleges with real dat
 - Supports filtering, comparison, and user-specific saved items
 
 ## Live Demo
-## Working Application: [https://edu-compare.lovable.app]
-## College Discovery App Demo and Features:[https://www.loom.com/share/50c52d45ead64790b60ccec59a161fcb]
+# Working Application: [https://edu-compare.lovable.app]
+# College Discovery App Demo and Features:[https://www.loom.com/share/50c52d45ead64790b60ccec59a161fcb]
 
 ## Setup
 1. Clone the repo
